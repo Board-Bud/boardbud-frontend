@@ -1,32 +1,56 @@
 .login {
-    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: gainsboro;
+    margin: 0;
   }
   
+  .lsurfImg {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: left;
+    height: 100%;
+    width: 60%;
+  }
+
   .lContainer {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
+    width: 40%;
+  }
+
+  .boardBud {
+    font-family: monospace;
+    font-weight: 100;
+    font-size: 40px;
+    color: #115484;
+    padding-bottom: 50px;
   }
   
   .lInput{
     height: 30px;
+    width: 300px;
     padding: 10px;
   }
   
   .lButton {
     border: none;
     padding: 10px 20px;
-    background-color: #0071c2;
+    background-color: #115484;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    margin-top: 20px;
   }
   
   .lButton:disabled{
     background-color: #0071c28c;
     cursor: not-allowed;
+  }
+
+  .registerLink {
+    font-family: monospace;
   }

@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css";
+import SurfImage from "../../images/SurfImage.jpg"
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -33,7 +34,15 @@ const Login = () => {
 
   return (
     <div className="login">
+      <div className="lsurfImg"> 
+        <img src={SurfImage} classname="surfImg" alt="img" />
+      </div>
       <div className="lContainer">
+        <h2 
+        className="boardBud"
+        type="text"
+        >BoardBud
+        </h2>
         <input
           type="text"
           placeholder="username"
@@ -48,9 +57,14 @@ const Login = () => {
           onChange={handleChange}
           className="lInput"
         />
+
+
         <button disabled={loading} onClick={handleClick} className="lButton">
           Login
         </button>
+        <Link to="/auth/register" className="registerLink">
+          Don't have an account? Register here.
+        </Link>
         {error && <span>{error.message}</span>}
       </div>
     </div>
