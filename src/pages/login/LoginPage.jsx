@@ -34,8 +34,9 @@ const Login = () => {
 
   return (
     <div className="login">
+
       <div className="lsurfImg"> 
-        <img src={SurfImage} classname="surfImg" alt="img" />
+            <img src={SurfImage} classname="surfImg" alt="img" />
       </div>
       <div className="lContainer">
         <h2 
