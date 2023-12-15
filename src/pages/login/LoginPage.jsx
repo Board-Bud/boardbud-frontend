@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post("/", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/surfboards")
     } catch (err) {
@@ -36,7 +36,7 @@ const Login = () => {
     <div className="login">
 
       <div className="lsurfImg"> 
-            <img src={SurfImage} classname="surfImg" alt="img" />
+            <img src={SurfImage} className="surfImg" alt="img" />
       </div>
       <div className="lContainer">
         <h2 
