@@ -35,7 +35,7 @@ const Login = () => {
         // Handle successful login response
         console.log(data);
         // Redirect to a new page 
-        navigate('/surfboards');
+        navigate('/surfboards/all');
       } else {
         // Handle login error
         console.error('Login failed:', response.statusText);
