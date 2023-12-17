@@ -14,13 +14,13 @@ const Login = () => {
             <img src={SurfImage} className="surfImg" alt="img" />
 
       </div>
-      
+
       <div className="lContainer">
 
         <h2 
         className="boardBud"
         type="text"
-        >BoardBud
+        >Welcome to BoardBud!
         </h2>
 
         <input
