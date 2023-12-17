@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import createError from 'http-errors'
-import Login from './pages/login/LoginPage';
+import Login from './pages/LoginPage';
 import CreateAccount from './pages/CreateAccount';
 import BrowseSurfboards from './pages/BrowseSurfboard';
 import BookingPage from './pages/BookingPage';
