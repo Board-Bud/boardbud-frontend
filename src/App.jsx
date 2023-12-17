@@ -14,7 +14,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/auth/login' element={<Login/>}/>
-        <Route path='/surfboards' element={<BrowseSurfboards/>}/>
+        <Route path='/surfboards/all' element={<BrowseSurfboards/>}/>
         {/* <Route path='/auth/register' element={CreateAccount}/>
         <Route path='/auth/:id' element={AccountPage}/>
         
