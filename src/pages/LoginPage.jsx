@@ -6,6 +6,46 @@ import SurfImage from "../images/SurfImage.jpg"
 
 
 const Login = () => {
+
+  const [user, setUser] = useState({
+    username: '',
+    password: '',
+  });
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+  setUser({ ...user, [name]: value });
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Handle successful login response
+        console.log(data);
+        // Redirect to a new page 
+        navigate('/surfboards');
+      } else {
+        // Handle login error
+        console.error('Login failed:', response.statusText);
+      }
+    } catch (error) {
+      // Handle fetch error
+      console.error('Error during fetch:', error);
+    }
+  };
+
   return (
     <div className="login">
 
@@ -15,7 +55,7 @@ const Login = () => {
 
       </div>
 
-      <div className="lContainer">
+      <form className="lContainer" onSubmit={handleLogin}>
 
         <h2 
         className="boardBud"
@@ -27,18 +67,26 @@ const Login = () => {
           type="text"
           placeholder="username"
           id="username"
+          name="username"
           className="lInput"
+          value={user.username}
+          onChange={handleInputChange}
+          required
         />
 
         <input
           type="password"
           placeholder="password"
           id="password"
+          name="password"
           className="lInput"
+          value={user.password}
+          onChange={handleInputChange}
+          required
         />
 
 
-        <button className="lButton">
+        <button type = "submit" className="lButton">
           Login
         </button>
 
@@ -46,7 +94,7 @@ const Login = () => {
           Don't have an account? Register here.
         </Link>
 
-      </div>
+      </form>
     </div>
   );
 };
